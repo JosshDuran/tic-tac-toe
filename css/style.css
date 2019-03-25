@@ -1,3 +1,124 @@
+body {
+	background: #212121;
+	color: #666;
+}
+
+#msg{
+color:white;
+
+}
+
+
 h1 {
-  color: purple;
+	text-align: center;
+	color: #fff;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+
+#box {
+  width: 400px;
+  overflow: auto;
+  margin: 40px auto;
+  background: #666;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  border-style: ridge;
+}
+#gameBoard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#b1green {
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	margin: 5px;
+	border-radius: 5px;
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+}
+
+#b2pink {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#b3red {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#b4blue {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#b5orange {
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#b6purple {
+	width: 100px;
+	height: 100px;
+	background-color: purple;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#b7yellow {
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#b8brown {
+	width: 100px;
+	height: 100px;
+	background-color: brown;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#b9black {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+#reset {
+	border: 0;
+	font-size: 18px;
+	padding: 15px;
+	margin: 0 auto;
+	display: block;
+	border-radius: 5px;
+	border-style: hidden;
+}
+
+#reset:hover {
+	cursor: pointer;
 }
