@@ -3,7 +3,10 @@ var WIN_CONDITIONS = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 1, 2],
-  [3, 4, 5]
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 4, 8],
+  [2, 4, 6]
 ]
 var turn = 0;
 var counter = 1; // turn number
@@ -61,7 +64,7 @@ function showImage(e) {
 function checkWinner() {
   // Loop through WIN_CONDITIONS
   for (var i = 0; i < WIN_CONDITIONS.length; i++) {
-
+    console.log("In loop " + i)
     if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
         gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
         messages.textContent = "The winner is";
