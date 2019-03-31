@@ -66,16 +66,20 @@ function checkWinner() {
   var win
   
   for (var i = 0; i < WIN_CONDITIONS.length; i++) {
-    console.log("In loop " + i)
+    // console.log("In loop " + i)
 
         //if gameBoard[...[0]]'s player is falsy OR gameBoard[...[1]]'s player is falsy OR gameBoard[...[2]]'s player is falsy, then win = false
     if (!gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
-      return win
+      win = false
     }
 
-    if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
+    else if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
         gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
-        messages.textContent = "The winner is";
+        // messages.textContent = "The winner is";
+      win = true
+    }
+    else{
+      win = false
     }
   }
   return win
