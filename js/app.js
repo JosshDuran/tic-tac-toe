@@ -63,17 +63,22 @@ function showImage(e) {
 
 function checkWinner() {
   // Loop through WIN_CONDITIONS
+  var win
+  
   for (var i = 0; i < WIN_CONDITIONS.length; i++) {
     console.log("In loop " + i)
+
+        //if gameBoard[...[0]]'s player is falsy OR gameBoard[...[1]]'s player is falsy OR gameBoard[...[2]]'s player is falsy, then win = false
+    if (!gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
+      return win
+    }
+
     if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
         gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
         messages.textContent = "The winner is";
-      return true
-    }
-    else {
-      return false
     }
   }
+  return win
 }
 
 // Check whether
