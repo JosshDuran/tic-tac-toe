@@ -28,6 +28,8 @@ function showImage(e) {
   this.removeEventListener('click', showImage);
 
 
+
+
   var imagePlayer = document.createElement("img");
 
   if(turn%2){
@@ -41,6 +43,7 @@ function showImage(e) {
 
   event.srcElement.appendChild(imagePlayer);
   event.srcElement.classList.add(classElm)
+  event.srcElement.setAttribute("player", classElm);
   turn++;
   counter++;
   player = turn % 2 ? 'dog' : 'cat'
@@ -59,8 +62,8 @@ function checkWinner() {
   // Loop through WIN_CONDITIONS
   for (var i = 0; i < WIN_CONDITIONS.length; i++) {
 
-    if (gameBoard[WIN_CONDITIONS[i][0]].className === gameBoard[WIN_CONDITIONS[i][1]].className &&
-        gameBoard[WIN_CONDITIONS[i][1]].className === gameBoard[WIN_CONDITIONS[i][2]].className) {
+    if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
+        gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
         messages.textContent = "The winner is";
       return true
     }
