@@ -121,10 +121,10 @@ function reset() {
   for(var i=0; i<gameBoard.length;i++){
     if(!!gameBoard[i].children.length){
       gameBoard[i].removeChild(gameBoard[i].children[0]);
-       counter = null;
-       messages = null;
-       turn = null;
-       player = null;
+      var turn = 0;
+      var counter = 1; // turn number
+      var messages = document.getElementById("msg");
+      var player
     }
   }
   startListeners();
