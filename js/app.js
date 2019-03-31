@@ -47,9 +47,10 @@ function showImage(e) {
   event.srcElement.appendChild(imagePlayer);
   event.srcElement.classList.add(classElm)
   event.srcElement.setAttribute("player", classElm);
-  turn++;
-  counter++;
+
   player = turn % 2 ? 'dog' : 'cat'
+  turn++;
+  counter++; 
   if(checkWinner()){
     //The player in your click function will be the winner if checkWinner() returns true
     console.log("WINNER")
@@ -123,10 +124,7 @@ function reset() {
       gameBoard[i].removeChild(gameBoard[i].children[0]);
       turn = 0;
       counter = 1; // turn number
-      messages = messages.textContent = " ";
-      player
-      gameBoard
-      startButton
+      messages.textContent = "";
     }
   }
   startListeners();
