@@ -111,6 +111,8 @@ function checkWinner() {
 function removeListeners() {
   for(var i=0; i<gameBoard.length; i++){
     gameBoard[i].removeEventListener('click', showImage)
+    // element.removeAttribute(attributename)
+    gameBoard[i].removeAttribute("player")
     console.log(i)
   }
 }
@@ -119,6 +121,10 @@ function reset() {
   for(var i=0; i<gameBoard.length;i++){
     if(!!gameBoard[i].children.length){
       gameBoard[i].removeChild(gameBoard[i].children[0]);
+       counter = null;
+       messages = null;
+       turn = null;
+       player = null;
     }
   }
   startListeners();
