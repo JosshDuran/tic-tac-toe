@@ -61,7 +61,6 @@ function showImage(e) {
   else if(counter >= 9){
     messages.textContent = "It's a tie!";
     removeListeners();
-    // We tied - do something for a draw condition
   }
 }
 
@@ -70,9 +69,6 @@ function checkWinner() {
   var win
   
   for (var i = 0; i < WIN_CONDITIONS.length; i++) {
-    // console.log("In loop " + i)
-
-        //if gameBoard[...[0]]'s player is falsy OR gameBoard[...[1]]'s player is falsy OR gameBoard[...[2]]'s player is falsy, then win = false
     if (!gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
       win = false
     } else if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
@@ -91,24 +87,6 @@ function checkWinner() {
   return win
 }
 
-// //You have a couple more things you need to do.
-// 1) when a game ends, you need to remove your event listeners 
-   // (you already have a function for it, just call it). You also need to edit that function to remove the 
-   // attributes otherwise you'll start a new game and automatically get a win because those divs still have 
-   // the attributes from the previous game.
-// 2) You need to remove event listeners when you get a draw. Your draw condition has a bug in it, see if you 
-   // can figure out how to fix it.
-// 3) You need to display who won, right now it just says "The Winner Is". You have access to it when you make 
-   // that console log, figure out how to access it.
-
-// Check whether
-      // Square number WIN_CONDITIONS[i][0] == player AND
-      // Square number WIN_CONDITIONS[i][1] == player AND
-      // Square number WIN_CONDITIONS[i][2] == player
-
-        // return true - there is a winner
-
-    // else return false
 function removeListeners() {
   for(var i=0; i<gameBoard.length; i++){
     gameBoard[i].removeEventListener('click', showImage)
