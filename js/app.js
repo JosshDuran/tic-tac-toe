@@ -71,16 +71,19 @@ function checkWinner() {
         //if gameBoard[...[0]]'s player is falsy OR gameBoard[...[1]]'s player is falsy OR gameBoard[...[2]]'s player is falsy, then win = false
     if (!gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") || !gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
       win = false
-    }
-    else if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
+    } else if (gameBoard[WIN_CONDITIONS[i][0]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") &&
         gameBoard[WIN_CONDITIONS[i][1]].getAttribute("player") === gameBoard[WIN_CONDITIONS[i][2]].getAttribute("player")) {
         // messages.textContent = "The winner is";
       win = true
-    }
-    else{
+    } else {
       win = false
     }
+    
+    if (win === true) {
+    return win
+    }
   }
+  
   return win
 }
 
